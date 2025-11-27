@@ -82,7 +82,7 @@ async function run() {
         app.get('/latest-products', async (req, res) => {
             const result = await productsCollection
                 .find()
-                .sort({ date: -1 })
+                .sort({ date: 1 })
                 .limit(3)
                 .toArray();
             res.send(result);
